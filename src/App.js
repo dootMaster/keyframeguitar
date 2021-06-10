@@ -158,7 +158,6 @@ class App extends React.Component {
     .then(response => {
       if (response.ok) {
         response.json().then(json => {
-          console.log(json);
           this.setState({
             saveIds: json,
           });
@@ -168,28 +167,11 @@ class App extends React.Component {
     .catch(err => {
       console.log(err);
     })
-
-    // $.ajax({
-    //   url: 'http://localhost:3000/id',
-    //   method: 'GET',
-    //   // "headers": {
-    //   //   "Content-Type": "application/json"
-    //   // },
-    //   success: (data) => {
-    //     this.setState({
-    //       saveIds: data,
-    //     }, () => {
-    //       console.log(this.state.saveIds)
-    //     })
-    //   },
-    //   error: (err) => {console.log(err)}
-    // })
   }
 
   savePreset(saveName) {
     if(saveName !== '') {
         const { tuning } = this.state;
-
         fetch('http://localhost:3000/', {
           method: 'POST',
           headers: {
@@ -203,20 +185,6 @@ class App extends React.Component {
         .catch(err => {
           console.log('err', err);
         })
-
-      // $.ajax({
-      //   url: 'http://localhost:3000/',
-      //   method: 'POST',
-      //   headers: {
-      //     "Content-Type": "application/json"
-      //   },
-      //   data: JSON.stringify({_id: saveName, diagram: tuning}),
-      //   success: (meta) => {
-      //     console.log(meta);
-      //     this.getAllIds();
-      //   },
-      //   error: (err) => {console.log(err)}
-      // })
     } else {
       alert('Preset needs name.')
     }
@@ -224,36 +192,41 @@ class App extends React.Component {
 
   loadPreset(event) {
     const _id = event.target.value;
-    $.ajax({
-      url: `http://localhost:3000/getUserPreset/${_id}`,
-      method: 'GET',
-      // "headers": {
-      //   "Content-Type": "application/json"
-      // },
-      success: (data) => {
-        console.log(data);
-        this.setState({
-          tuning: data.diagram,
-          currentPreset: _id,
+
+    fetch(`http://localhost:3000/getUserPreset/${_id}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         })
-      },
-      error: (err) => {console.log(err)}
-    })
+        .then(response => {
+          if (response.ok) {
+            response.json().then(data => {
+              this.setState({
+                tuning: data.diagram,
+                currentPreset: _id,
+              })
+            });
+          }
+        })
+        .catch(err => {
+          console.log('err', err);
+        })
   }
 
   deletePreset() {
     const { currentPreset } = this.state;
-    $.ajax({
-      url: `http://localhost:3000/delete/${currentPreset}`,
+
+    fetch(`http://localhost:3000/delete/${currentPreset}`, {
       method: 'DELETE',
-      // "headers": {
-      //   "Content-Type": "application/json"
-      // },
-      success: (meta) => {
-        console.log(meta);
-        this.getAllIds();
-      },
-      error: (err) => {console.log(err)}
+    })
+    .then(res => {
+      console.log('deleted');
+      console.log(res);
+      this.getAllIds();
+    })
+    .catch(err =>{
+      console.log(err);
     })
   }
 
