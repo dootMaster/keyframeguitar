@@ -35,7 +35,7 @@
 
 .nut {
   border-style: solid;
-  border-color: grey;
+  border-color: white;
   background-color: #D8D8D8;
   color: white;
   padding: 1px;
@@ -46,7 +46,7 @@
 
 .fret {
   border-style: solid;
-  border-color: white;
+  border-color: grey;
   border-radius: 200px;
   padding: 1px;
   margin-right: 10px;
@@ -56,12 +56,22 @@
 
 .fretMark {
   border-style: solid;
-  border-color: grey;
+  border-color: white;
   border-radius: 200px;
   padding: 1px;
   margin-right: 10px;
   user-select: none;
   cursor: pointer;
+}
+
+.fretGuide {
+  border-style: solid;
+  border-color: white;
+  border-radius: 200px;
+  padding: 1px;
+  margin-right: 10px;
+  user-select: none;
+  cursor: default;
 }
 
 #current {

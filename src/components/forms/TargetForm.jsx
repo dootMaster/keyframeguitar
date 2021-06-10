@@ -6,7 +6,7 @@ class TargetForm extends React.Component {
 
     this.submitTarget = this.submitTarget.bind(this);
     this.handleChange = this.handleChange.bind(this);
-
+    this.resetTargetForm = this.resetTargetForm.bind(this);
     this.state = {
         C: false, Db: false, D: false, Eb: false, E: false, F: false,
         Gb: false, G: false, Ab: false, A: false, Bb: false, B: false,
@@ -34,6 +34,16 @@ class TargetForm extends React.Component {
     globalTargetConfiguration(configuration);
   }
 
+  resetTargetForm() {
+    this.setState({
+      C: false, Db: false,
+      D: false, Eb: false,
+      E: false, F: false,
+      Gb: false, G: false,
+      Ab: false, A: false,
+      Bb: false, B: false,
+    })
+  }
 
   render() {
     const { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } = this.state;
@@ -115,7 +125,15 @@ class TargetForm extends React.Component {
           </div>
           {/* <input type="button" value="SUBMIT" onClick={this.submitCurrent}></input> */}
         </form>
-        <input id="formResetButton" type="button" value="RESET TARGET" onClick={this.props.resetTarget}></input>
+        <input
+          id="formResetButton"
+          type="button"
+          value="RESET TARGET"
+          onClick={() => {
+            this.props.resetTarget();
+            this.resetTargetForm();
+            }}>
+        </input>
       </div>
     );
   }

@@ -6,6 +6,7 @@ class CurrentForm extends React.Component {
 
     this.submitCurrent = this.submitCurrent.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.resetCurrentForm = this.resetCurrentForm.bind(this);
 
     this.state = {
         C: false, Db: false,
@@ -39,6 +40,16 @@ class CurrentForm extends React.Component {
     globalCurrentConfiguration(configuration);
   }
 
+  resetCurrentForm() {
+    this.setState({
+      C: false, Db: false,
+      D: false, Eb: false,
+      E: false, F: false,
+      Gb: false, G: false,
+      Ab: false, A: false,
+      Bb: false, B: false,
+    })
+  }
 
   render() {
     const { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } = this.state;
@@ -120,7 +131,15 @@ class CurrentForm extends React.Component {
           </div>
           {/* <input type="button" value="SUBMIT" onClick={this.submitCurrent}></input> */}
         </form>
-        <input id="formResetButton" type="button" value="RESET CURRENT" onClick={this.props.resetCurrent}></input>
+        <input
+          id="formResetButton"
+          type="button"
+          value="RESET CURRENT"
+          onClick={() => {
+            this.props.resetCurrent();
+            this.resetCurrentForm();
+            }}>
+        </input>
       </div>
     );
   }

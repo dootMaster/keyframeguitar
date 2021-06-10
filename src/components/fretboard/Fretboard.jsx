@@ -62,19 +62,19 @@ function Fretboard ({ tuning, clickToggle }) {
         )
       })}
           <div className="markers">
-            <div className="fret">0</div>
+            <div className="fretGuide">0</div>
             <div></div>
             <div></div>
-            <div className="fret">3</div>
+            <div className="fretGuide">3</div>
             <div></div>
-            <div className="fret">5</div>
+            <div className="fretGuide">5</div>
             <div></div>
-            <div className="fret">7</div>
+            <div className="fretGuide">7</div>
             <div></div>
-            <div className="fret">9</div>
+            <div className="fretGuide">9</div>
             <div></div>
             <div></div>
-            <div className="fret">12</div>
+            <div className="fretGuide">12</div>
           </div>
     </div>
   )
