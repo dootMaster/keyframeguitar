@@ -192,7 +192,6 @@ class App extends React.Component {
 
   loadPreset(event) {
     const _id = event.target.value;
-
     fetch(`http://localhost:3000/getUserPreset/${_id}`, {
           method: 'GET',
           headers: {
