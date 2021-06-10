@@ -61,10 +61,15 @@ class App extends React.Component {
           } else {
             config[i][ii].displayType = 'current';
           }
+        } else if(!collection.includes(config[i][ii])) {
+          if(config[i][ii].displayType === 'common' || config[i][ii].displayType === 'target') {
+            config[i][ii].displayType = 'target';
+          } else {
+            config[i][ii].displayType = 'neutral';
+          }
         }
       }
     }
-    console.log(tuning);
     this.setState({
       tuning: config,
     })
@@ -80,6 +85,12 @@ class App extends React.Component {
             config[i][ii].displayType = 'common';
           } else {
             config[i][ii].displayType = 'target';
+          }
+        } else if(!collection.includes(config[i][ii])) {
+          if(config[i][ii].displayType === 'common' || config[i][ii].displayType === 'current') {
+            config[i][ii].displayType = 'current';
+          } else {
+            config[i][ii].displayType = 'neutral';
           }
         }
       }
@@ -170,7 +181,7 @@ class App extends React.Component {
   }
 
   savePreset(saveName) {
-    if(saveName !== 'Save Name') {
+    if(saveName !== 'Save Name' && saveName.length <= 64 && saveName !== '') {
         const { tuning } = this.state;
         fetch('http://localhost:3000/', {
           method: 'POST',
@@ -186,7 +197,7 @@ class App extends React.Component {
           console.log('err', err);
         })
     } else {
-      alert('Preset needs name.')
+      alert('Preset can\'t be empty or too long.')
     }
   }
 

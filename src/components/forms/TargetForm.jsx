@@ -6,7 +6,7 @@ class TargetForm extends React.Component {
 
     this.submitTarget = this.submitTarget.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleSelectChangeTarget = this.handleSelectChangeTarget.bind(this);
+    // this.handleSelectChangeTarget = this.handleSelectChangeTarget.bind(this);
 
     this.state = {
         C: false, Db: false, D: false, Eb: false, E: false, F: false,
@@ -20,18 +20,19 @@ class TargetForm extends React.Component {
       [event.target.value]: !this.state[event.target.value],
     }, () => {
       console.log(event.target.value, this.state[event.target.value]);
+      this.submitTarget();
     });
   }
 
-  handleSelectChangeTarget(event) {
-    const string = event.target.value;
-    const stringArr = string.split(' ');
-    const collection = [];
-    for(let i=0; i<stringArr.length; i++) {
-      collection.push(stringArr[i]);
-    }
-    this.props.globalTargetConfiguration(collection);
-  }
+  // handleSelectChangeTarget(event) {
+  //   const string = event.target.value;
+  //   const stringArr = string.split(' ');
+  //   const collection = [];
+  //   for(let i=0; i<stringArr.length; i++) {
+  //     collection.push(stringArr[i]);
+  //   }
+  //   this.props.globalTargetConfiguration(collection);
+  // }
 
   submitTarget() {
     const { globalTargetConfiguration } = this.props;

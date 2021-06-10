@@ -6,7 +6,7 @@ class CurrentForm extends React.Component {
 
     this.submitCurrent = this.submitCurrent.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this);
+    // this.handleSelectChange = this.handleSelectChange.bind(this);
 
     this.state = {
         C: false, Db: false, D: false, Eb: false, E: false, F: false,
@@ -24,15 +24,15 @@ class CurrentForm extends React.Component {
     });
   }
 
-  handleSelectChange(event) {
-    const string = event.target.value;
-    const stringArr = string.split(' ');
-    const collection = [];
-    for(let i=0; i<stringArr.length; i++) {
-      collection.push(stringArr[i]);
-    }
-    this.props.globalCurrentConfiguration(collection);
-  }
+  // handleSelectChange(event) {
+  //   const string = event.target.value;
+  //   const stringArr = string.split(' ');
+  //   const collection = [];
+  //   for(let i=0; i<stringArr.length; i++) {
+  //     collection.push(stringArr[i]);
+  //   }
+  //   this.props.globalCurrentConfiguration(collection);
+  // }
 
   submitCurrent() {
     const { globalCurrentConfiguration } = this.props;
@@ -42,6 +42,7 @@ class CurrentForm extends React.Component {
         configuration.push(key)
       }
     }
+    console.log(configuration);
     globalCurrentConfiguration(configuration);
   }
 

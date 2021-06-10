@@ -12,7 +12,7 @@ db.once('open', () => {
 
 
 const kfgSchema = mongoose.Schema({
-  _id: String,
+  _id: {type: String, minLength: 1, maxLength: 64},
   diagram: [],
 })
 
