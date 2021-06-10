@@ -15,6 +15,7 @@ const loadOneUserPreset = (req) => {
 const saveOne = (req) => {
   console.log('controllers saveOne')
   const { _id, diagram } = req.body;
+  console.log(_id, diagram);
   return SaveKFG.create({_id: _id, diagram: diagram});
 }
 

@@ -149,39 +149,43 @@ class App extends React.Component {
   }
 
   getAllIds() {
-    $.ajax({
-      url: 'http://localhost:3000/id',
+    fetch('http://localhost:3000/id', {
       method: 'GET',
-      // "headers": {
-      //   "Content-Type": "application/json"
-      // },
-      success: (data) => {
-        this.setState({
-          saveIds: data,
-        }, () => {
-          console.log(this.state.saveIds)
-        })
-      },
-      error: (err) => {console.log(err)}
+      headers: {
+        Accept: 'application/json',
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        response.json().then(json => {
+          console.log(json);
+          this.setState({
+            saveIds: json,
+          });
+        });
+      }
+    })
+    .catch(err => {
+      console.log(err);
     })
   }
 
   savePreset(saveName) {
     if(saveName !== '') {
         const { tuning } = this.state;
-      $.ajax({
-        url: 'http://localhost:3000/',
-        method: 'POST',
-        // "headers": {
-        //   "Content-Type": "application/json"
-        // },
-        data: JSON.stringify({_id: saveName, diagram: tuning}),
-        success: (meta) => {
-          console.log(meta);
-          this.getAllIds();
-        },
-        error: (err) => {console.log(err)}
-      })
+        fetch('http://localhost:3000/', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({_id: saveName, diagram: tuning}),
+        })
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        })
     } else {
       alert('Preset needs name.')
     }
