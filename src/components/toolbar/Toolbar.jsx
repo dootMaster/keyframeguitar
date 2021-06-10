@@ -8,7 +8,7 @@ class Toolbar extends React.Component {
 
     this.state = {
       displayMetronome: false,
-      saveFileName: '',
+      saveFileName: 'Save Name',
     };
 
     this.toggleMetronome = this.toggleMetronome.bind(this);
@@ -32,25 +32,26 @@ class Toolbar extends React.Component {
     const { saveIds, savePreset, loadPreset } = this.props;
     const { displayMetronome, saveFileName } = this.state;
     return (
-      <div>
-        <h3>Toolbar</h3>
-        <button onClick={this.props.switchTuning}>TOGGLE 7 STRING</button>
-        <button onClick={this.props.clearAll}>CLEAR FRETBOARD</button>
-        <br />
+      <div className="toolbarContainer">
+        <div id="inputDiv">
         <input
+          id='saveNameField'
           type="text"
           value={saveFileName}
-          onChange={this.saveNameInputHandler}>
+          onChange={this.saveNameInputHandler}
+          maxLength="64"
+          onFocus={() => event.target.value = ""}>
         </input>
         <button onClick={() => {savePreset(saveFileName)}}>SAVE</button>
-        <br />
-        <label htmlFor="toolbarUserPresetSelect">User Presets</label>
+        </ div>
+        <div id="inputDiv">
+        <label id="presetSelectLabel" htmlFor="toolbarUserPresetSelect">User Presets:</label>
         <select
           name="userPresets"
           id="toolbarUserPresetSelect"
           onChange={loadPreset}
         >
-          <option value={[]}>--</option>
+          <option value={[]}>---------------</option>
           {saveIds.map((_id, i) => {
             return (
               <option value={_id} key={_id}>{_id}</option>
@@ -58,6 +59,9 @@ class Toolbar extends React.Component {
           })}
         </select>
         <button onClick={this.props.deletePreset}>DELETE</button>
+        </div>
+        <button onClick={this.props.switchTuning}>TOGGLE 7 STRING</button>
+        <button onClick={this.props.clearAll}>CLEAR FRETBOARD</button>
         {/* <br />
         <button onClick={this.toggleMetronome}>Metronome</button>
         {displayMetronome ?

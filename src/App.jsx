@@ -170,7 +170,7 @@ class App extends React.Component {
   }
 
   savePreset(saveName) {
-    if(saveName !== '') {
+    if(saveName !== 'Save Name') {
         const { tuning } = this.state;
         fetch('http://localhost:3000/', {
           method: 'POST',
@@ -232,7 +232,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Key Frame Guitar</h1>
-        <h2>A fretboard navigation and practice tool inspired by key frames in animation.</h2>
         <Fretboard
           tuning={tuning}
           clickToggle={this.clickToggle}

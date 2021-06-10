@@ -20,6 +20,7 @@ class CurrentForm extends React.Component {
       [event.target.value]: !this.state[event.target.value],
     }, () => {
       console.log(event.target.value, this.state[event.target.value]);
+      this.submitCurrent();
     });
   }
 
