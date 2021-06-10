@@ -1,13 +1,14 @@
 .noteCheckbox {
   border-style: solid;
-  border-color: white;
+  border-color: #ADA296;
+  background-color: #0F1A20;
   border-radius: 200px;
   user-select: none;
-  margin: 1rem;
+  margin: .5rem;
   padding: 1rem;
   cursor: pointer;
-  font-weight: bold;
-  font-size: larger;
+  font-weight: normal;
+  font-size: x-large;
 }
 
 .CurrentForm {
@@ -34,6 +35,7 @@
   font-size: 1rem;
   text-align: center;
   margin-left: 1rem;
+  padding-left: 1rem;
 }
 
 .formContainer {
@@ -88,7 +90,7 @@ button {
   height: fit-content;
   position: absolute;
   left: -4rem;
-  top: 46rem;
+  top: 45rem;
 }
 
 #targetFormTitle {
@@ -96,6 +98,6 @@ button {
   width: fit-content;
   height: fit-content;
   position: absolute;
-  left: 45rem;
-  top: 46rem;
+  left: 44rem;
+  top: 45rem;
 }

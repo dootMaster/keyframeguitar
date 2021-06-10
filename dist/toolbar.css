@@ -22,6 +22,7 @@
 }
 
 #presetSelectLabel {
+  align-content: center;
   margin: .5rem;
   font-size: 2rem;
   font-weight: bold;
