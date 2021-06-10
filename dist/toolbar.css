@@ -17,10 +17,15 @@
   margin: .5rem;
 }
 
+#toolbarUserPresetSelect {
+  cursor: pointer;
+}
+
 #presetSelectLabel {
   margin: .5rem;
   font-size: 2rem;
   font-weight: bold;
+  user-select: none;
 }
 
 #inputDiv {

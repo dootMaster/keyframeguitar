@@ -4,7 +4,6 @@ import tuning from './components/fretboard/tuning.js';
 import CurrentForm from './components/forms/CurrentForm.jsx';
 import TargetForm from './components/forms/TargetForm.jsx';
 import Toolbar from './components/toolbar/Toolbar.jsx';
-import $ from 'jquery';
 
 
 class App extends React.Component {
@@ -240,11 +239,13 @@ class App extends React.Component {
     })
   }
 
+
+
   render() {
     const { tuning, saveIds } = this.state;
     return (
       <div className="App">
-        <h1>Key Frame Guitar</h1>
+        <h3>Key Frame Guitar</h3>
         <Fretboard
           tuning={tuning}
           clickToggle={this.clickToggle}

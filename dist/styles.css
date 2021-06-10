@@ -20,9 +20,12 @@ body {
   width: 100vw;
 }
 
-h1 {
+h3 {
 margin-top: 1rem;
+user-select: none;
 }
+
+
 
 
 

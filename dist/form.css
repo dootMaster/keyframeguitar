@@ -40,6 +40,7 @@
   display: inline-flex;
   width: 80vw;
   margin-top: 1rem;
+  user-select: none;
 }
 
 button {
@@ -79,4 +80,22 @@ button {
 #targettrue {
   background-color: #F42C04;
   color: #00CECB;
+}
+
+#currentFormTitle {
+  transform: rotate(-90deg);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: -4rem;
+  top: 46rem;
+}
+
+#targetFormTitle {
+  transform: rotate(-90deg);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  left: 45rem;
+  top: 46rem;
 }

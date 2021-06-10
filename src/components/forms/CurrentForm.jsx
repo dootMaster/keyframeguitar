@@ -55,7 +55,7 @@ class CurrentForm extends React.Component {
     const { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } = this.state;
     return (
       <div className="CurrentForm">
-        <h2>Current Configuration</h2>
+        <h2 id="currentFormTitle">Current Configuration</h2>
         <form className="checkboxContainer">
           <div
             className="noteCheckbox"
