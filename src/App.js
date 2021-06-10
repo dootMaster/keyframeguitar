@@ -4,8 +4,6 @@ import tuning from './components/fretboard/tuning.js';
 import CurrentForm from './components/forms/CurrentForm.jsx';
 import TargetForm from './components/forms/TargetForm.jsx';
 import Toolbar from './components/toolbar/Toolbar.jsx';
-import $ from 'jquery';
-
 
 class App extends React.Component {
   constructor(props) {
