@@ -4,15 +4,6 @@ const app = express();
 const controllers = require('../src/db/controllers.js');
 const port = 3000;
 const path = require('path');
-// const bodyParser = require('body-parser');
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-
-// const corsOptions = {
-//   origin: 'http://localhost:3000',
-//   optionsSuccessStatus: 200,
-// }
-// app.use('*', cors(corsOptions));
 
 app.use(express.static(path.join(__dirname, '../dist')));
 
@@ -43,3 +34,5 @@ app.delete('/delete/:_id', (req, res) => {
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })
+
+module.exports = app;

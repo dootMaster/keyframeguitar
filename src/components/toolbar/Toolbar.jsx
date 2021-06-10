@@ -1,5 +1,6 @@
 import React from 'react';
 // import Metronome from '@kevinorriss/react-metronome';
+// import "rc-slider/assets/index.css";
 
 class Toolbar extends React.Component {
   constructor(props){
@@ -10,7 +11,7 @@ class Toolbar extends React.Component {
       saveFileName: '',
     };
 
-    // this.toggleMetronome = this.toggleMetronome.bind(this);
+    this.toggleMetronome = this.toggleMetronome.bind(this);
     this.saveNameInputHandler = this.saveNameInputHandler.bind(this);
   }
 
@@ -20,11 +21,11 @@ class Toolbar extends React.Component {
     })
   }
 
-  // toggleMetronome() {
-  //   this.setState({
-  //     displayMetronome: !this.state.displayMetronome,
-  //   })
-  // }
+  toggleMetronome() {
+    this.setState({
+      displayMetronome: !this.state.displayMetronome,
+    })
+  }
 
 
   render() {
@@ -57,8 +58,8 @@ class Toolbar extends React.Component {
           })}
         </select>
         <button onClick={this.props.deletePreset}>DELETE</button>
-        <br />
-        {/* <button onClick={this.toggleMetronome}>Metronome</button>
+        {/* <br />
+        <button onClick={this.toggleMetronome}>Metronome</button>
         {displayMetronome ?
         <Metronome
           sliderStyle={{

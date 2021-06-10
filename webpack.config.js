@@ -26,7 +26,8 @@ module.exports = {
           // attach the presets to the loader (most projects use .babelrc file instead)
           presets: ["@babel/preset-env", "@babel/preset-react"]
         }
-      }
+      },
+      { test: /\.css$/, use: 'css-loader' },
     ]
   },
   // add a custom index.html as the template

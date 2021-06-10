@@ -152,9 +152,6 @@ class App extends React.Component {
     $.ajax({
       url: 'http://localhost:3000/id',
       method: 'GET',
-      // "headers": {
-      //   "Content-Type": "application/json"
-      // },
       success: (data) => {
         this.setState({
           saveIds: data,
@@ -172,9 +169,6 @@ class App extends React.Component {
       $.ajax({
         url: 'http://localhost:3000/',
         method: 'POST',
-        // "headers": {
-        //   "Content-Type": "application/json"
-        // },
         data: JSON.stringify({_id: saveName, diagram: tuning}),
         success: (meta) => {
           console.log(meta);
@@ -192,9 +186,6 @@ class App extends React.Component {
     $.ajax({
       url: `http://localhost:3000/getUserPreset/${_id}`,
       method: 'GET',
-      // "headers": {
-      //   "Content-Type": "application/json"
-      // },
       success: (data) => {
         console.log(data);
         this.setState({
@@ -211,9 +202,6 @@ class App extends React.Component {
     $.ajax({
       url: `http://localhost:3000/delete/${currentPreset}`,
       method: 'DELETE',
-      // "headers": {
-      //   "Content-Type": "application/json"
-      // },
       success: (meta) => {
         console.log(meta);
         this.getAllIds();
