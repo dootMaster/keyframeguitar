@@ -221,8 +221,6 @@ class App extends React.Component {
       method: 'DELETE',
     })
     .then(res => {
-      console.log('deleted');
-      console.log(res);
       this.getAllIds();
     })
     .catch(err =>{
