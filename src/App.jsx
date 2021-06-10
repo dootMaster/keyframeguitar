@@ -51,6 +51,7 @@ class App extends React.Component {
   }
 
   globalCurrentConfiguration(collection) {
+    this.resetCurrent();
     const { tuning } = this.state;
     const config = tuning;
     for(let i=0; i<config.length; i++){
@@ -76,6 +77,7 @@ class App extends React.Component {
   }
 
   globalTargetConfiguration(collection) {
+    this.resetTarget();
     const { tuning } = this.state;
     const config = tuning;
     for(let i=0; i<config.length; i++){

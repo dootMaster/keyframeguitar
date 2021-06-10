@@ -1,0 +1,32 @@
+.toolbarContainer {
+  display: flex;
+  background-color: #182933;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+#saveNameField, #toolbarUserPresetSelect {
+  display: inline-block;
+  border: 1px solid #ADA296;
+  background-color: #ff7e7c;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: .5rem;
+}
+
+#presetSelectLabel {
+  margin: .5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#inputDiv {
+  display: flex;
+  background-color: #4f7891;
+  border-radius: 5px;
+  padding: .5rem;
+  margin-left: 1rem;
+}

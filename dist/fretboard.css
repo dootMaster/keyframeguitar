@@ -1,0 +1,85 @@
+.fretboard {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  background-color: #182933;
+  padding: 16px;
+  /* border-radius: 10px; */
+  color: #88A2AA;
+  width: 90vw;
+  margin: 1rem auto;
+  border-radius: 10px;
+}
+
+.string {
+  display: inline-grid;
+  grid-template-columns:7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7%;
+  background-color: #182933;
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  padding: 2px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.markers {
+  display: inline-grid;
+  grid-template-columns:7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7%;
+  background-color: #ADA296;
+  color: grey;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.nut {
+  border-style: solid;
+  border-color: grey;
+  background-color: #D8D8D8;
+  color: white;
+  padding: 1px;
+  margin-right: 10px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.fret {
+  border-style: solid;
+  border-color: white;
+  border-radius: 200px;
+  padding: 1px;
+  margin-right: 10px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.fretMark {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 200px;
+  padding: 1px;
+  margin-right: 10px;
+  user-select: none;
+  cursor: pointer;
+}
+
+#current {
+  background-color: #00CECB;
+  color: #F42C04;
+}
+
+#target {
+  background-color: #F42C04;
+  color: #00CECB;
+}
+
+#neutral {
+  background-color: #0F1A20;
+}
+
+#common {
+  background-color: #FFED66;
+  border-color: #FF5E5B;
+  color: black;
+}

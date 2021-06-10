@@ -6,7 +6,6 @@ class TargetForm extends React.Component {
 
     this.submitTarget = this.submitTarget.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSelectChangeTarget = this.handleSelectChangeTarget.bind(this);
 
     this.state = {
         C: false, Db: false, D: false, Eb: false, E: false, F: false,
@@ -15,24 +14,14 @@ class TargetForm extends React.Component {
 
   }
 
-  handleChange(event) {
+  handleChange(input) {
     this.setState({
-      [event.target.value]: !this.state[event.target.value],
+      [input]: !this.state[input],
     }, () => {
-      console.log(event.target.value, this.state[event.target.value]);
+      console.log(input, this.state[input]);
       this.submitTarget();
     });
   }
-
-  // handleSelectChangeTarget(event) {
-  //   const string = event.target.value;
-  //   const stringArr = string.split(' ');
-  //   const collection = [];
-  //   for(let i=0; i<stringArr.length; i++) {
-  //     collection.push(stringArr[i]);
-  //   }
-  //   this.props.globalTargetConfiguration(collection);
-  // }
 
   submitTarget() {
     const { globalTargetConfiguration } = this.props;
@@ -47,129 +36,86 @@ class TargetForm extends React.Component {
 
 
   render() {
+    const { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } = this.state;
     return (
       <div className="TargetForm">
         <h2>Target Configuration</h2>
         <form className="checkboxContainer">
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="C"
-              onChange={this.handleChange}>
-            </input>
-            <label>C</label>
+          <div
+            className="noteCheckbox"
+            value="C"
+            id={`target${C}`}
+            onClick={() => {this.handleChange("C")}}>C
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Db"
-              onChange={this.handleChange}>
-            </input>
-            <label>Db/C#</label>
+          <div
+            className="noteCheckbox"
+            value="Db"
+            id={`target${Db}`}
+            onClick={() => {this.handleChange("Db")}}>Db/C#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="D"
-              onChange={this.handleChange}>
-            </input>
-            <label>D</label>
+          <div
+            className="noteCheckbox"
+            value="D"
+            id={`target${D}`}
+            onClick={() => {this.handleChange("D")}}>D
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Eb"
-              onChange={this.handleChange}>
-            </input>
-            <label>Eb/D#</label>
+          <div
+            className="noteCheckbox"
+            value="Eb"
+            id={`target${Eb}`}
+            onClick={() => {this.handleChange("Eb")}}>Eb/D#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="E"
-              onChange={this.handleChange}>
-            </input>
-            <label>E</label>
+          <div
+            className="noteCheckbox"
+            value="E"
+            id={`target${E}`}
+            onClick={() => {this.handleChange("E")}}>E
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="F"
-              onChange={this.handleChange}>
-            </input>
-            <label>F</label>
+          <div
+            className="noteCheckbox"
+            value="F"
+            id={`target${F}`}
+            onClick={() => {this.handleChange("F")}}>F
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Gb"
-              onChange={this.handleChange}>
-            </input>
-            <label>Gb/F#</label>
+          <div
+            className="noteCheckbox"
+            value="Gb"
+            id={`target${Gb}`}
+            onClick={() => {this.handleChange("Gb")}}>Gb/F#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="G"
-              onChange={this.handleChange}>
-            </input>
-            <label>G</label>
+          <div
+            className="noteCheckbox"
+            value="G"
+            id={`target${G}`}
+            onClick={() => {this.handleChange("G")}}>G
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Ab"
-              onChange={this.handleChange}>
-            </input>
-            <label>Ab/G#</label>
+          <div
+            className="noteCheckbox"
+            value="Ab"
+            id={`target${Ab}`}
+            onClick={() => {this.handleChange("Ab")}}>Ab/G#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="A"
-              onChange={this.handleChange}>
-            </input>
-            <label>A</label>
+          <div
+            className="noteCheckbox"
+            value="A"
+            id={`target${A}`}
+            onClick={() => {this.handleChange("A")}}>A
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Bb"
-              onChange={this.handleChange}>
-            </input>
-            <label>Bb/A#</label>
+          <div
+            className="noteCheckbox"
+            value="Bb"
+            id={`target${Bb}`}
+            onClick={() => {this.handleChange("Bb")}}>Bb/A#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="B"
-              onChange={this.handleChange}>
-            </input>
-            <label>B</label><br />
+          <div
+            className="noteCheckbox"
+            value="B"
+            id={`target${B}`}
+            onClick={() => {this.handleChange("B")}}>B
           </div>
-          <input type="button" value="SUBMIT" onClick={this.submitTarget}></input>
-          <input type="button" value="RESET" onClick={this.props.resetTarget}></input>
+          {/* <input type="button" value="SUBMIT" onClick={this.submitCurrent}></input> */}
         </form>
-        {/* <label htmlFor="target">sample configs: </label>
-        <select id="target" onChange={this.handleSelectChangeTarget}>
-          <option value="">--</option>
-          <option value="F A C E">FM7</option>
-          <option value="F A C Eb">F7</option>
-          <option value="F Ab C Eb">Fm7</option>
-          <option value="F Ab B Eb">Fm7b5</option>
-        </select> */}
+        <input id="formResetButton" type="button" value="RESET TARGET" onClick={this.props.resetTarget}></input>
       </div>
     );
   }

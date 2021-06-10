@@ -6,33 +6,26 @@ class CurrentForm extends React.Component {
 
     this.submitCurrent = this.submitCurrent.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSelectChange = this.handleSelectChange.bind(this);
 
     this.state = {
-        C: false, Db: false, D: false, Eb: false, E: false, F: false,
-        Gb: false, G: false, Ab: false, A: false, Bb: false, B: false,
+        C: false, Db: false,
+        D: false, Eb: false,
+        E: false, F: false,
+        Gb: false, G: false,
+        Ab: false, A: false,
+        Bb: false, B: false,
       }
 
   }
 
-  handleChange(event) {
+  handleChange(input) {
     this.setState({
-      [event.target.value]: !this.state[event.target.value],
+      [input]: !this.state[input],
     }, () => {
-      console.log(event.target.value, this.state[event.target.value]);
+      console.log(input, this.state[input]);
       this.submitCurrent();
     });
   }
-
-  // handleSelectChange(event) {
-  //   const string = event.target.value;
-  //   const stringArr = string.split(' ');
-  //   const collection = [];
-  //   for(let i=0; i<stringArr.length; i++) {
-  //     collection.push(stringArr[i]);
-  //   }
-  //   this.props.globalCurrentConfiguration(collection);
-  // }
 
   submitCurrent() {
     const { globalCurrentConfiguration } = this.props;
@@ -42,135 +35,92 @@ class CurrentForm extends React.Component {
         configuration.push(key)
       }
     }
-    console.log(configuration);
+    console.log('submitCurrent', configuration);
     globalCurrentConfiguration(configuration);
   }
 
 
   render() {
+    const { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } = this.state;
     return (
       <div className="CurrentForm">
         <h2>Current Configuration</h2>
         <form className="checkboxContainer">
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="C"
-              onChange={this.handleChange}>
-            </input>
-            <label>C</label>
+          <div
+            className="noteCheckbox"
+            value="C"
+            id={`current${C}`}
+            onClick={() => {this.handleChange("C")}}>C
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Db"
-              onChange={this.handleChange}>
-            </input>
-            <label>Db/C#</label>
+          <div
+            className="noteCheckbox"
+            value="Db"
+            id={`current${Db}`}
+            onClick={() => {this.handleChange("Db")}}>Db/C#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="D"
-              onChange={this.handleChange}>
-            </input>
-            <label>D</label>
+          <div
+            className="noteCheckbox"
+            value="D"
+            id={`current${D}`}
+            onClick={() => {this.handleChange("D")}}>D
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Eb"
-              onChange={this.handleChange}>
-            </input>
-            <label>Eb/D#</label>
+          <div
+            className="noteCheckbox"
+            value="Eb"
+            id={`current${Eb}`}
+            onClick={() => {this.handleChange("Eb")}}>Eb/D#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="E"
-              onChange={this.handleChange}>
-            </input>
-            <label>E</label>
+          <div
+            className="noteCheckbox"
+            value="E"
+            id={`current${E}`}
+            onClick={() => {this.handleChange("E")}}>E
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="F"
-              onChange={this.handleChange}>
-            </input>
-            <label>F</label>
+          <div
+            className="noteCheckbox"
+            value="F"
+            id={`current${F}`}
+            onClick={() => {this.handleChange("F")}}>F
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Gb"
-              onChange={this.handleChange}>
-            </input>
-            <label>Gb/F#</label>
+          <div
+            className="noteCheckbox"
+            value="Gb"
+            id={`current${Gb}`}
+            onClick={() => {this.handleChange("Gb")}}>Gb/F#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="G"
-              onChange={this.handleChange}>
-            </input>
-            <label>G</label>
+          <div
+            className="noteCheckbox"
+            value="G"
+            id={`current${G}`}
+            onClick={() => {this.handleChange("G")}}>G
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Ab"
-              onChange={this.handleChange}>
-            </input>
-            <label>Ab/G#</label>
+          <div
+            className="noteCheckbox"
+            value="Ab"
+            id={`current${Ab}`}
+            onClick={() => {this.handleChange("Ab")}}>Ab/G#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="A"
-              onChange={this.handleChange}>
-            </input>
-            <label>A</label>
+          <div
+            className="noteCheckbox"
+            value="A"
+            id={`current${A}`}
+            onClick={() => {this.handleChange("A")}}>A
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="Bb"
-              onChange={this.handleChange}>
-            </input>
-            <label>Bb/A#</label>
+          <div
+            className="noteCheckbox"
+            value="Bb"
+            id={`current${Bb}`}
+            onClick={() => {this.handleChange("Bb")}}>Bb/A#
           </div>
-          <div>
-            <input
-              className="noteCheckbox"
-              type="checkbox"
-              value="B"
-              onChange={this.handleChange}>
-            </input>
-            <label>B</label><br />
+          <div
+            className="noteCheckbox"
+            value="B"
+            id={`current${B}`}
+            onClick={() => {this.handleChange("B")}}>B
           </div>
-          <input type="button" value="SUBMIT" onClick={this.submitCurrent}></input>
-          <input type="button" value="RESET" onClick={this.props.resetCurrent}></input>
+          {/* <input type="button" value="SUBMIT" onClick={this.submitCurrent}></input> */}
         </form>
-        {/* <label htmlFor="current">sample configs: </label>
-        <select id="current" onChange={this.handleSelectChange}>
-          <option>--</option>
-          <option value="C E G B">CM7</option>
-          <option value="C E G Bb">C7</option>
-          <option value="C Eb G Bb">Cm7</option>
-          <option value="C Eb Gb Bb">Cm7b5</option>
-        </select> */}
+        <input id="formResetButton" type="button" value="RESET CURRENT" onClick={this.props.resetCurrent}></input>
       </div>
     );
   }
