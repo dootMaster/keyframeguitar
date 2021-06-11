@@ -8,8 +8,8 @@ class TargetForm extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.resetTargetForm = this.resetTargetForm.bind(this);
     this.state = {
-        C: false, Db: false, D: false, Eb: false, E: false, F: false,
-        Gb: false, G: false, Ab: false, A: false, Bb: false, B: false,
+        C: false, 'C#/Db': false, D: false, 'D#/Eb': false, E: false, F: false,
+        'F#/Gb': false, G: false, 'G#/Ab': false, A: false, 'A#/Bb': false, B: false,
       }
 
   }
@@ -36,17 +36,13 @@ class TargetForm extends React.Component {
 
   resetTargetForm() {
     this.setState({
-      C: false, Db: false,
-      D: false, Eb: false,
-      E: false, F: false,
-      Gb: false, G: false,
-      Ab: false, A: false,
-      Bb: false, B: false,
+      C: false, 'C#/Db': false, D: false, 'D#/Eb': false, E: false, F: false,
+      'F#/Gb': false, G: false, 'G#/Ab': false, A: false, 'A#/Bb': false, B: false,
     })
   }
 
   render() {
-    const { C, Db, D, Eb, E, F, Gb, G, Ab, A, Bb, B } = this.state;
+    const { C, 'C#/Db': Db, D, 'D#/Eb': Eb, E, F, 'F#/Gb': Gb, G, 'G#/Ab': Ab, A, 'A#/Bb': Bb, B } = this.state;
     return (
       <div className="TargetForm">
         <h2 id="targetFormTitle">Target Configuration</h2>
@@ -61,7 +57,7 @@ class TargetForm extends React.Component {
             className="noteCheckbox"
             value="Db"
             id={`target${Db}`}
-            onClick={() => {this.handleChange("Db")}}>Db/C#
+            onClick={() => {this.handleChange("C#/Db")}}>C#/Db
           </div>
           <div
             className="noteCheckbox"
@@ -73,7 +69,7 @@ class TargetForm extends React.Component {
             className="noteCheckbox"
             value="Eb"
             id={`target${Eb}`}
-            onClick={() => {this.handleChange("Eb")}}>Eb/D#
+            onClick={() => {this.handleChange("D#/Eb")}}>D#/Eb
           </div>
           <div
             className="noteCheckbox"
@@ -91,7 +87,7 @@ class TargetForm extends React.Component {
             className="noteCheckbox"
             value="Gb"
             id={`target${Gb}`}
-            onClick={() => {this.handleChange("Gb")}}>Gb/F#
+            onClick={() => {this.handleChange("F#/Gb")}}>F#/Gb
           </div>
           <div
             className="noteCheckbox"
@@ -103,7 +99,7 @@ class TargetForm extends React.Component {
             className="noteCheckbox"
             value="Ab"
             id={`target${Ab}`}
-            onClick={() => {this.handleChange("Ab")}}>Ab/G#
+            onClick={() => {this.handleChange("G#/Ab")}}>G#/Ab
           </div>
           <div
             className="noteCheckbox"
@@ -115,7 +111,7 @@ class TargetForm extends React.Component {
             className="noteCheckbox"
             value="Bb"
             id={`target${Bb}`}
-            onClick={() => {this.handleChange("Bb")}}>Bb/A#
+            onClick={() => {this.handleChange("A#/Bb")}}>A#/Bb
           </div>
           <div
             className="noteCheckbox"
