@@ -12,8 +12,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body::before {
+  content: "";
+  background-image: url('bg.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: .1;
+  z-index: -1;
+}
+
 .App {
   padding: 0 3rem;
+  opacity: 10;
 }
 
 body {

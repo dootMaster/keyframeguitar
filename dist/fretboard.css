@@ -45,8 +45,7 @@
 }
 
 .fret {
-  border-style: solid;
-  border-color: grey;
+  border: solid grey;
   border-radius: 200px;
   padding: 1px;
   margin-right: 10px;
@@ -55,8 +54,7 @@
 }
 
 .fretMark {
-  border-style: solid;
-  border-color: white;
+  border: solid white;
   border-radius: 200px;
   padding: 1px;
   margin-right: 10px;

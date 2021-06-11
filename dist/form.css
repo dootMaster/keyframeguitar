@@ -12,12 +12,10 @@
 }
 
 .CurrentForm {
-  background-color: #0F1A20;
   display: inline-flex;
 }
 
 .TargetForm {
-  background-color: #0F1A20;
   display: inline-flex;
   margin-left: 2rem;
 }
