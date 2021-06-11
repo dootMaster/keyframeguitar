@@ -14,7 +14,7 @@ body {
 
 body::before {
   content: "";
-  background-image: url('bg.jpg');
+  background-image: url('bgSmaller.jpg');
   background-size: cover;
   position: absolute;
   top: 0px;
