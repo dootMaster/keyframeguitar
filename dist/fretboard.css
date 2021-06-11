@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 
-.fretMark {
+.fret-mark {
   border: solid white;
   border-radius: 200px;
   padding: 1px;
@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 
-.fretGuide {
+.fret-guide {
   border-style: solid;
   border-color: white;
   border-radius: 200px;

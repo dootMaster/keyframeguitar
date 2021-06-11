@@ -1,4 +1,11 @@
-.noteCheckbox {
+.form-container {
+  display: inline-flex;
+  width: 80vw;
+  margin-top: 1rem;
+  user-select: none;
+}
+
+.note-checkbox {
   border-style: solid;
   border-color: #ADA296;
   background-color: #0F1A20;
@@ -11,16 +18,16 @@
   font-size: x-large;
 }
 
-.CurrentForm {
+.current-form {
   display: inline-flex;
 }
 
-.TargetForm {
+.target-form {
   display: inline-flex;
   margin-left: 2rem;
 }
 
-.checkboxContainer {
+.checkbox-container {
   display: inline-grid;
   color: #D8D8D8;
   grid-template-columns: 25% 25% 25% 25%;
@@ -34,13 +41,6 @@
   text-align: center;
   margin-left: 1rem;
   padding-left: 1rem;
-}
-
-.formContainer {
-  display: inline-flex;
-  width: 80vw;
-  margin-top: 1rem;
-  user-select: none;
 }
 
 button {
@@ -57,7 +57,7 @@ button {
   cursor: pointer;
 }
 
-#formResetButton {
+#form-reset-button {
   background-color: #FF5E5B;
   border: 1px solid #ADA296;
   color: white;
@@ -72,30 +72,30 @@ button {
   max-height: 4rem;
 }
 
-#currenttrue {
+#current-true {
   background-color: #00CECB;
   color: #F42C04;
 }
 
-#targettrue {
+#target-true {
   background-color: #F42C04;
   color: #00CECB;
 }
 
-#currentFormTitle {
+#current-form-title {
   transform: rotate(-90deg);
   width: fit-content;
   height: fit-content;
   position: absolute;
   left: -4rem;
-  top: 45rem;
+  top: 44.5rem;
 }
 
-#targetFormTitle {
+#target-form-title {
   transform: rotate(-90deg);
   width: fit-content;
   height: fit-content;
   position: absolute;
   left: 44rem;
-  top: 45rem;
+  top: 44.5rem;
 }

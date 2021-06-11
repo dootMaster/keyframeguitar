@@ -1,11 +1,11 @@
-.toolbarContainer {
+.toolbar-container {
   display: flex;
   background-color: #182933;
   border-radius: 5px;
   padding: 1rem;
 }
 
-#saveNameField, #toolbarUserPresetSelect {
+#save-name-field, #toolbar-user-preset-select {
   display: inline-block;
   border: 1px solid #ADA296;
   background-color: #fda09f;
@@ -18,11 +18,11 @@
   color: grey;
 }
 
-#toolbarUserPresetSelect {
+#toolbar-user-preset-select {
   cursor: pointer;
 }
 
-#presetSelectLabel {
+#preset-select-label {
   align-content: center;
   margin: .5rem;
   font-size: 2rem;
@@ -30,7 +30,7 @@
   user-select: none;
 }
 
-#inputDiv {
+#input-div {
   display: flex;
   background-color: #4f7891;
   border-radius: 5px;

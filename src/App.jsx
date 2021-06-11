@@ -4,6 +4,7 @@ import tuning from './components/fretboard/tuning.js';
 import CurrentForm from './components/forms/CurrentForm.jsx';
 import TargetForm from './components/forms/TargetForm.jsx';
 import Toolbar from './components/toolbar/Toolbar.jsx';
+import TuningModal from './components/toolbar/TuningModal.jsx';
 
 
 class App extends React.Component {
@@ -253,7 +254,7 @@ class App extends React.Component {
   render() {
     const { tuning, saveIds } = this.state;
     return (
-      <div className="App">
+      <div className="app">
         <h3>Key Frame Guitar</h3>
         <Fretboard
           tuning={tuning}
@@ -268,7 +269,7 @@ class App extends React.Component {
           getAllIds={this.getAllIds}
           clearAll={this.clearAll}
         />
-        <div className="formContainer">
+        <div className="form-container">
           <CurrentForm
             globalCurrentConfiguration={this.globalCurrentConfiguration}
             resetCurrent={this.resetCurrent}
@@ -280,6 +281,7 @@ class App extends React.Component {
             clearAll={this.state.clearAll}
           />
         </div>
+        <TuningModal />
       </div>
     );
   }

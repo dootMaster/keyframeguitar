@@ -32,10 +32,10 @@ class Toolbar extends React.Component {
     const { saveIds, savePreset, loadPreset } = this.props;
     const { displayMetronome, saveFileName } = this.state;
     return (
-      <div className="toolbarContainer">
-        <div id="inputDiv">
+      <div className="toolbar-container">
+        <div id="input-div">
         <input
-          id='saveNameField'
+          id='save-name-field'
           type="text"
           value={saveFileName}
           onChange={this.saveNameInputHandler}
@@ -44,11 +44,11 @@ class Toolbar extends React.Component {
         </input>
         <button onClick={() => {savePreset(saveFileName)}}>SAVE</button>
         </ div>
-        <div id="inputDiv">
-        <label id="presetSelectLabel" htmlFor="toolbarUserPresetSelect">User Presets:</label>
+        <div id="input-div">
+        <label id="preset-select-label" htmlFor="toolbar-user-preset-select">User Presets:</label>
         <select
           name="userPresets"
-          id="toolbarUserPresetSelect"
+          id="toolbar-user-preset-select"
           onChange={loadPreset}
         >
           <option value={[]}>---------------</option>
