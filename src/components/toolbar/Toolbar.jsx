@@ -8,7 +8,7 @@ class Toolbar extends React.Component {
 
     this.state = {
       displayMetronome: false,
-      saveFileName: 'Save Name',
+      saveFileName: 'Enter Save Name Here',
     };
 
     this.toggleMetronome = this.toggleMetronome.bind(this);
@@ -58,7 +58,10 @@ class Toolbar extends React.Component {
             )
           })}
         </select>
-        <button onClick={this.props.deletePreset}>DELETE</button>
+        <button onClick={() => {
+          this.props.deletePreset();
+          this.props.clearAll();
+        }}>DELETE</button>
         </div>
         <button onClick={this.props.switchTuning}>TOGGLE 7 STRING</button>
         <button onClick={this.props.clearAll}>CLEAR FRETBOARD</button>

@@ -191,7 +191,7 @@ class App extends React.Component {
   }
 
   savePreset(saveName) {
-    if(saveName !== 'Save Name' && saveName.length <= 64 && saveName !== '') {
+    if(saveName !== 'Enter Save Name Here' && saveName.length <= 64 && saveName !== '') {
         const { tuning } = this.state;
         fetch('http://localhost:3000/', {
           method: 'POST',
@@ -273,13 +273,11 @@ class App extends React.Component {
             globalCurrentConfiguration={this.globalCurrentConfiguration}
             resetCurrent={this.resetCurrent}
             clearAll={this.state.clearAll}
-            clearAllReset={this.clearAllReset}
           />
           <TargetForm
             globalTargetConfiguration={this.globalTargetConfiguration}
             resetTarget={this.resetTarget}
             clearAll={this.state.clearAll}
-            clearAllReset={this.clearAllReset}
           />
         </div>
       </div>
