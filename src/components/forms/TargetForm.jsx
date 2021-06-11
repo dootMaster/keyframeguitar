@@ -14,11 +14,16 @@ class TargetForm extends React.Component {
 
   }
 
+  componentDidUpdate() {
+    if(this.props.clearAll) {
+      this.resetTargetForm();
+    }
+  }
+
   handleChange(input) {
     this.setState({
       [input]: !this.state[input],
     }, () => {
-      console.log(input, this.state[input]);
       this.submitTarget();
     });
   }
@@ -38,7 +43,7 @@ class TargetForm extends React.Component {
     this.setState({
       C: false, 'C#/Db': false, D: false, 'D#/Eb': false, E: false, F: false,
       'F#/Gb': false, G: false, 'G#/Ab': false, A: false, 'A#/Bb': false, B: false,
-    })
+    }, () => {this.props.clearAllReset()})
   }
 
   render() {

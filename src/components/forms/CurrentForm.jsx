@@ -15,11 +15,16 @@ class CurrentForm extends React.Component {
 
   }
 
+  componentDidUpdate() {
+    if(this.props.clearAll) {
+      this.resetCurrentForm();
+    }
+  }
+
   handleChange(input) {
     this.setState({
       [input]: !this.state[input],
     }, () => {
-      console.log(input, this.state[input]);
       this.submitCurrent();
     });
   }
@@ -32,7 +37,6 @@ class CurrentForm extends React.Component {
         configuration.push(key)
       }
     }
-    console.log('submitCurrent', configuration);
     globalCurrentConfiguration(configuration);
   }
 
@@ -40,7 +44,7 @@ class CurrentForm extends React.Component {
     this.setState({
       C: false, 'C#/Db': false, D: false, 'D#/Eb': false, E: false, F: false,
       'F#/Gb': false, G: false, 'G#/Ab': false, A: false, 'A#/Bb': false, B: false,
-    })
+    }, () => {this.props.clearAllReset()})
   }
 
   render() {

@@ -20,12 +20,14 @@ class App extends React.Component {
     this.loadPreset = this.loadPreset.bind(this);
     this.deletePreset = this.deletePreset.bind(this);
     this.clearAll = this.clearAll.bind(this);
+    this.clearAllReset = this.clearAllReset.bind(this);
     // this.testButton = this.testButton.bind(this);
 
     this.state = {
       tuning: tuning.standard,
       saveIds: [],
       currentPreset: '',
+      clearAll: false,
     }
   }
 
@@ -145,6 +147,13 @@ class App extends React.Component {
     }
     this.setState({
       tuning: config,
+      clearAll: true,
+    }, () => this.clearAllReset())
+  }
+
+  clearAllReset() {
+    this.setState({
+      clearAll: false,
     })
   }
 
@@ -263,10 +272,14 @@ class App extends React.Component {
           <CurrentForm
             globalCurrentConfiguration={this.globalCurrentConfiguration}
             resetCurrent={this.resetCurrent}
+            clearAll={this.state.clearAll}
+            clearAllReset={this.clearAllReset}
           />
           <TargetForm
             globalTargetConfiguration={this.globalTargetConfiguration}
             resetTarget={this.resetTarget}
+            clearAll={this.state.clearAll}
+            clearAllReset={this.clearAllReset}
           />
         </div>
       </div>
