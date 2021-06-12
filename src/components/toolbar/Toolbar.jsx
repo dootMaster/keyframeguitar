@@ -27,10 +27,22 @@ class Toolbar extends React.Component {
     })
   }
 
+  setLocalStorage() {
+    localStorage.setItem('test file name', JSON.stringify([{one: 1}, {two: 2}, {three: 3}, {four: 4}, {five: 5}]));
+  }
+
+  getLocalStorage() {
+    const data = localStorage.getItem('test file name');
+    console.log(Array.isArray(JSON.parse(data)), JSON.parse(data));
+  }
+
+  rmvLocalStorage() {
+    localStorage.clear();
+  }
 
   render() {
     const { saveIds, savePreset, loadPreset } = this.props;
-    const { displayMetronome, saveFileName } = this.state;
+    const { saveFileName } = this.state;
     return (
       <div className="toolbar-container">
         <div id="input-div">
@@ -45,7 +57,7 @@ class Toolbar extends React.Component {
         <button onClick={() => {savePreset(saveFileName)}}>SAVE</button>
         </ div>
         <div id="input-div">
-        <label id="preset-select-label" htmlFor="toolbar-user-preset-select">User Presets:</label>
+        {/* <label id="preset-select-label" htmlFor="toolbar-user-preset-select">User Presets:</label> */}
         <select
           name="userPresets"
           id="toolbar-user-preset-select"
@@ -53,9 +65,10 @@ class Toolbar extends React.Component {
         >
           <option value={[]}>Select Preset</option>
           {saveIds.map((_id, i) => {
-            return (
-              <option value={_id} key={_id}>{_id}</option>
-            )
+            if(_id !== 'loglevel') {
+              return (
+                <option value={_id} key={_id}>{_id}</option>
+              )}
           })}
         </select>
         <button onClick={() => {
@@ -63,22 +76,9 @@ class Toolbar extends React.Component {
           this.props.clearAll();
         }}>DELETE</button>
         </div>
-        <button onClick={this.props.toggleTuningModal}>CHANGE TUNING</button>
-        <button onClick={this.props.clearAll}>CLEAR FRETBOARD</button>
-        {/* <br />
-        <button onClick={this.toggleMetronome}>Metronome</button>
-        {displayMetronome ?
-        <Metronome
-          sliderStyle={{
-            width: "25%",
-          }}
-          playPauseStyle={{
-            position: "relative",
-            right: "90%",
-            "background-color": "lightseagreen",
-          }}
-        />
-        : null} */}
+        <button onClick={this.props.toggleTuningModal}>OPTIONS</button>
+        <button onClick={this.props.clearAll}>RESET ALL</button>
+        {/* <button onClick={this.rmvLocalStorage}>DELETE ALL</button> */}
       </div>
     )
   }

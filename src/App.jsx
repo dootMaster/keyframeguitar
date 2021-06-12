@@ -175,43 +175,22 @@ class App extends React.Component {
   }
 
   getAllIds() {
-    fetch('http://localhost:3000/id', {
-      method: 'GET',
-      headers: {
-        Accept: 'application/json',
-      }
-    })
-    .then(response => {
-      if (response.ok) {
-        response.json().then(json => {
-          this.setState({
-            saveIds: json,
-          });
-        });
-      }
-    })
-    .catch(err => {
-      console.log('getAllIds', err);
+    const values = [],
+    keys = Object.keys(localStorage);
+
+    this.setState({
+      saveIds: keys,
     })
   }
 
   savePreset(saveName) {
     if(saveName !== 'Enter Save Name Here' && saveName.length <= 64 && saveName !== '') {
         const { tuning } = this.state;
-        fetch('http://localhost:3000/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({_id: saveName, diagram: tuning})
-        })
-        .then(res => {
+        localStorage.setItem(saveName, JSON.stringify(tuning));
+        if(localStorage.getItem(saveName)) {
           this.getAllIds();
-          alert('Preset saved.')
-        })
-        .catch(err => {
-          console.log('savePreset', err);
-        })
+          alert('Preset saved.');
+        }
     } else {
       alert('Preset can\'t be empty or too long.')
     }
@@ -220,40 +199,21 @@ class App extends React.Component {
   loadPreset(event) {
     const _id = event.target.value;
     if(_id !== '') {
-      fetch(`http://localhost:3000/getUserPreset/${_id}`, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          })
-          .then(response => {
-            if (response.ok) {
-              response.json().then(data => {
-                this.setState({
-                  tuning: data.diagram,
-                  currentPreset: _id,
-                })
-              });
-            }
-          })
-          .catch(err => {
-            console.log('loadPreset', err);
-          })
+      const diagram = localStorage.getItem(_id);
+      console.log(typeof _id, typeof diagram);
+      console.log(_id, JSON.parse(diagram));
+      this.setState({
+        tuning: JSON.parse(diagram),
+        currentPreset: _id,
+      })
     }
   }
 
   deletePreset() {
     const { currentPreset } = this.state;
     if(currentPreset !== '') {
-      fetch(`http://localhost:3000/delete/${currentPreset}`, {
-        method: 'DELETE',
-      })
-      .then(res => {
-        this.getAllIds();
-      })
-      .catch(err =>{
-        console.log('deletePreset', err);
-      })
+      localStorage.removeItem(currentPreset);
+      this.getAllIds();
     }
   }
 
