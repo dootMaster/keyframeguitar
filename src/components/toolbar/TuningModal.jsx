@@ -3,18 +3,31 @@ import React, { useState } from 'react';
 const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
   const [numberOfStrings, setNumberOfStrings] = useState(6);
 
-  const [string1, setString1] = useState('E');
-  const [string2, setString2] = useState('B');
-  const [string3, setString3] = useState('G');
-  const [string4, setString4] = useState('D');
-  const [string5, setString5] = useState('A');
-  const [string6, setString6] = useState('E');
-  const [string7, setString7] = useState('B');
-  const [string8, setString8] = useState('F#/Gb');
-  const [string9, setString9] = useState('C#/Db');
+  const [ tuning, setTuning ] = useState({
+    string1: 'E',
+    string2: 'B',
+    string3: 'G',
+    string4: 'D',
+    string5: 'A',
+    string6: 'E',
+    string7: 'B',
+    string8: 'F#/Gb',
+    string9: 'C#/Db',
+  })
 
   const selectNumberOfStringsMap = [4,5,6,7,8,9];
-  const allStrings = [string1, string2, string3, string4, string5, string6, string7, string8, string9];
+
+  const allStrings = [
+    tuning.string1,
+    tuning.string2,
+    tuning.string3,
+    tuning.string4,
+    tuning.string5,
+    tuning.string6,
+    tuning.string7,
+    tuning.string8,
+    tuning.string9
+  ];
 
   const chromaticScale = [
     'C', 'C#/Db', 'D', 'D#/Eb', 'E', 'F',
@@ -22,10 +35,10 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
   ]
 
   const minStringsMap = [
-    {f: setString6, note: 'E', num: 6},
-    {f: setString5, note: 'A', num: 5},
-    {f: setString4, note: 'D', num: 4},
-    {f: setString3, note: 'G', num: 3},
+    {note: 'E', num: 6},
+    {note: 'A', num: 5},
+    {note: 'D', num: 4},
+    {note: 'G', num: 3},
   ];
 
   return (
@@ -45,7 +58,7 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
           {numberOfStrings === '9' ?
             <div>
               <label htmlFor="string9">9</label>
-              <select className="tuning-selector" id="string9" onChange={(e) => setString9(e.target.value)} defaultValue={'C#/Db'}>
+              <select className="tuning-selector" id="string9" onChange={(e) => setTuning({...tuning, string9: e.target.value})} defaultValue={'C#/Db'}>
                 {chromaticScale.map((note) => {
                   return (<option value={note}>{note}</option>)
                 })}
@@ -56,7 +69,7 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
           {numberOfStrings === '8' || numberOfStrings === '9' ?
             <div>
               <label htmlFor="string8">8</label>
-              <select className="tuning-selector" id="string8" onChange={(e) => setString8(e.target.value)} defaultValue={'F#/Gb'}>
+              <select className="tuning-selector" id="string8" onChange={(e) => setTuning({...tuning, string8: e.target.value})} defaultValue={'F#/Gb'}>
                 {chromaticScale.map((note) => {
                   return (<option value={note}>{note}</option>)
                 })}
@@ -67,7 +80,7 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
           {numberOfStrings === '7' || numberOfStrings === '8' || numberOfStrings === '9' || numberOfStrings === '5' ?
             <div>
               <label htmlFor="string7">7</label>
-              <select className="tuning-selector" id="string7" onChange={(e) => setString7(e.target.value)} defaultValue={'B'}>
+              <select className="tuning-selector" id="string7" onChange={(e) => setTuning({...tuning, string7: e.target.value})} defaultValue={'B'}>
                 {chromaticScale.map((note) => {
                   return (<option value={note}>{note}</option>)
                 })}
@@ -79,7 +92,11 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
             return (
             <div>
               <label htmlFor={`string${item.num}`}>{item.num}</label>
-              <select className="tuning-selector" id={`string${item.num}`} onChange={(e) => item.f(e.target.value)} defaultValue={item.note}>
+              <select
+                className="tuning-selector"
+                id={`string${item.num}`}
+                onChange={(e) => setTuning({...tuning, ['string'+item.num]: e.target.value})}
+                defaultValue={item.note}>
                 {chromaticScale.map((note) => {
                   return (<option value={note}>{note}</option>)
                 })}
@@ -91,7 +108,7 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
           {parseInt(numberOfStrings) >= 6 ?
           <div>
             <label htmlFor="string2">2</label>
-            <select className="tuning-selector" id="string2" onChange={(e) => setString2(e.target.value)} defaultValue={'B'}>
+            <select className="tuning-selector" id="string2" onChange={(e) => setTuning({...tuning, string2: e.target.value})} defaultValue={'B'}>
               {chromaticScale.map((note) => {
                 return (<option value={note}>{note}</option>)
               })}
@@ -102,7 +119,7 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
           {parseInt(numberOfStrings) >= 6 ?
           <div>
             <label htmlFor="string1">1</label>
-            <select className="tuning-selector" id="string1" onChange={(e) => setString1(e.target.value)} defaultValue={'E'}>
+            <select className="tuning-selector" id="string1" onChange={(e) => setTuning({...tuning, string1: e.target.value})} defaultValue={'E'}>
               {chromaticScale.map((note) => {
                 return (<option value={note}>{note}</option>)
               })}
