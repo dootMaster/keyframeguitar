@@ -1,0 +1,47 @@
+#tuning-modal {
+  display: block;
+  width: 70%;
+  height: 30%;
+  position: fixed;
+  z-index: 15;
+  border: 2px solid #ADA296;
+  bottom: 15vw;
+  left: 12.5vw;
+  background-color: #0F1A20;
+  padding: 2%;
+  border-radius: 20px;
+}
+
+#tuning-modal-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  bottom: 0vw;
+  left: 0vw;
+  z-index: 0;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+#tuning-selector-group {
+  display: inline-flex;
+  position: relative;
+  margin-top: 2rem;
+}
+
+.tuning-selector {
+  display: inline-block;
+  border: 1px solid #ADA296;
+  background-color: #fda09f;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: .5rem;
+  color: grey;
+}
+
+#string-number-select {
+  font-size: xx-large;
+}

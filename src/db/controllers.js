@@ -1,4 +1,4 @@
-const SaveKFG = require('./models.js');
+const { SaveKFG, db } = require('./models.js');
 
 const findAllIds = (req) => {
   // console.log('controllers findAllIds')
@@ -25,5 +25,9 @@ const deleteOneUserPreset = (req) => {
   return SaveKFG.deleteOne({_id: deleteName});
 }
 
+const deleteAll = () => {
+   return SaveKFG.collection.drop();
+}
 
-module.exports = { findAllIds, saveOne, loadOneUserPreset, deleteOneUserPreset };
+
+module.exports = { findAllIds, saveOne, loadOneUserPreset, deleteOneUserPreset, deleteAll };

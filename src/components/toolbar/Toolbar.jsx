@@ -51,7 +51,7 @@ class Toolbar extends React.Component {
           id="toolbar-user-preset-select"
           onChange={loadPreset}
         >
-          <option value={[]}>---------------</option>
+          <option value={[]}>Select Preset</option>
           {saveIds.map((_id, i) => {
             return (
               <option value={_id} key={_id}>{_id}</option>
@@ -63,7 +63,7 @@ class Toolbar extends React.Component {
           this.props.clearAll();
         }}>DELETE</button>
         </div>
-        <button onClick={this.props.switchTuning}>TOGGLE 7 STRING</button>
+        <button onClick={this.props.toggleTuningModal}>CHANGE TUNING</button>
         <button onClick={this.props.clearAll}>CLEAR FRETBOARD</button>
         {/* <br />
         <button onClick={this.toggleMetronome}>Metronome</button>

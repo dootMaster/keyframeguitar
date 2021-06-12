@@ -10,7 +10,6 @@ db.once('open', () => {
   console.log('mongoose connected successfully');
 });
 
-
 const kfgSchema = mongoose.Schema({
   _id: {type: String, minLength: 1, maxLength: 64},
   diagram: [],
@@ -18,4 +17,4 @@ const kfgSchema = mongoose.Schema({
 
 const SaveKFG = mongoose.model('SaveKFG', kfgSchema);
 
-module.exports = SaveKFG;
+module.exports = { SaveKFG, db };

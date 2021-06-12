@@ -5,6 +5,7 @@ import CurrentForm from './components/forms/CurrentForm.jsx';
 import TargetForm from './components/forms/TargetForm.jsx';
 import Toolbar from './components/toolbar/Toolbar.jsx';
 import TuningModal from './components/toolbar/TuningModal.jsx';
+import string from './components/fretboard/strings.js';
 
 
 class App extends React.Component {
@@ -22,6 +23,8 @@ class App extends React.Component {
     this.deletePreset = this.deletePreset.bind(this);
     this.clearAll = this.clearAll.bind(this);
     this.clearAllReset = this.clearAllReset.bind(this);
+    this.toggleTuningModal = this.toggleTuningModal.bind(this);
+    this.alterTuningAndStringAmount = this.alterTuningAndStringAmount.bind(this);
     // this.testButton = this.testButton.bind(this);
 
     this.state = {
@@ -29,6 +32,7 @@ class App extends React.Component {
       saveIds: [],
       currentPreset: '',
       clearAll: false,
+      displayTuningModal: true,
     }
   }
 
@@ -187,7 +191,7 @@ class App extends React.Component {
       }
     })
     .catch(err => {
-      console.log(err);
+      console.log('getAllIds', err);
     })
   }
 
@@ -203,9 +207,10 @@ class App extends React.Component {
         })
         .then(res => {
           this.getAllIds();
+          alert('Preset saved.')
         })
         .catch(err => {
-          console.log('err', err);
+          console.log('savePreset', err);
         })
     } else {
       alert('Preset can\'t be empty or too long.')
@@ -214,42 +219,70 @@ class App extends React.Component {
 
   loadPreset(event) {
     const _id = event.target.value;
-    fetch(`http://localhost:3000/getUserPreset/${_id}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-        .then(response => {
-          if (response.ok) {
-            response.json().then(data => {
-              this.setState({
-                tuning: data.diagram,
-                currentPreset: _id,
-              })
-            });
-          }
-        })
-        .catch(err => {
-          console.log('err', err);
-        })
+    if(_id !== '') {
+      fetch(`http://localhost:3000/getUserPreset/${_id}`, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          })
+          .then(response => {
+            if (response.ok) {
+              response.json().then(data => {
+                this.setState({
+                  tuning: data.diagram,
+                  currentPreset: _id,
+                })
+              });
+            }
+          })
+          .catch(err => {
+            console.log('loadPreset', err);
+          })
+    }
   }
 
   deletePreset() {
     const { currentPreset } = this.state;
+    if(currentPreset !== '') {
+      fetch(`http://localhost:3000/delete/${currentPreset}`, {
+        method: 'DELETE',
+      })
+      .then(res => {
+        this.getAllIds();
+      })
+      .catch(err =>{
+        console.log('deletePreset', err);
+      })
+    }
+  }
 
-    fetch(`http://localhost:3000/delete/${currentPreset}`, {
-      method: 'DELETE',
-    })
-    .then(res => {
-      this.getAllIds();
-    })
-    .catch(err =>{
-      console.log(err);
+  toggleTuningModal () {
+    this.setState({
+      displayTuningModal: !this.state.displayTuningModal,
     })
   }
 
-
+  alterTuningAndStringAmount (stringAmount, tuning) {
+    const newGuitar = [];
+    const numOfStrings = parseInt(stringAmount);
+    if (numOfStrings >= 6) {
+      for (let i = 0; i < numOfStrings; i++) {
+        newGuitar.push(JSON.parse(JSON.stringify(string[tuning[i]])))
+      }
+      this.setState({
+        tuning: newGuitar,
+      })
+    } else if(numOfStrings <= 5) {
+      for (let i = 2; i < numOfStrings + 2; i++) {
+        newGuitar.push(JSON.parse(JSON.stringify(string[tuning[i]])))
+      }
+      console.log(newGuitar)
+      this.setState({
+        tuning: newGuitar,
+      })
+    }
+  }
 
   render() {
     const { tuning, saveIds } = this.state;
@@ -268,6 +301,7 @@ class App extends React.Component {
           deletePreset={this.deletePreset}
           getAllIds={this.getAllIds}
           clearAll={this.clearAll}
+          toggleTuningModal={this.toggleTuningModal}
         />
         <div className="form-container">
           <CurrentForm
@@ -281,7 +315,12 @@ class App extends React.Component {
             clearAll={this.state.clearAll}
           />
         </div>
-        <TuningModal />
+        {this.state.displayTuningModal ?
+        <TuningModal
+          toggleTuningModal={this.toggleTuningModal}
+          alterTuningAndStringAmount={this.alterTuningAndStringAmount}
+        />
+        : null}
       </div>
     );
   }

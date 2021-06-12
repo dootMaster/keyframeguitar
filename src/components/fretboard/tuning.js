@@ -1,14 +1,24 @@
 const string = require('./strings.js');
 
 const standard = [
-  string.E4, string.B3, string.G3, string.D3, string.A2, string.E2,
+  JSON.parse(JSON.stringify(string.E)),
+  JSON.parse(JSON.stringify(string.B)),
+  JSON.parse(JSON.stringify(string.G)),
+  JSON.parse(JSON.stringify(string.D)),
+  JSON.parse(JSON.stringify(string.A)),
+  JSON.parse(JSON.stringify(string.E)),
 ]
 
 const stupidTuning = [
-  JSON.parse(JSON.stringify(string.A2)), JSON.parse(JSON.stringify(string.A2)), JSON.parse(JSON.stringify(string.A2)), JSON.parse(JSON.stringify(string.A2)), JSON.parse(JSON.stringify(string.A2)), JSON.parse(JSON.stringify(string.A2)),
+  JSON.parse(JSON.stringify(string.A)),
+  JSON.parse(JSON.stringify(string.A)),
+  JSON.parse(JSON.stringify(string.A)),
+  JSON.parse(JSON.stringify(string.A)),
+  JSON.parse(JSON.stringify(string.A)),
+  JSON.parse(JSON.stringify(string.A)),
 ]
 const sevenStringB = [
-  string.E4, string.B3, string.G3, string.D3, string.A2, string.E2, string.B1
+  string.E, string.B, string.G, string.D, string.A, string.E, string.B
 ]
 module.exports = { standard, sevenStringB, stupidTuning };
 

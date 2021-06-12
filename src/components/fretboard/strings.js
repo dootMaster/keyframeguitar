@@ -1,5 +1,5 @@
 module.exports = {
-  B1: [
+  B: [
     {note: 'B', displayType: 'neutral'},
     {note: 'C', displayType: 'neutral'},
     {note: 'C#/Db', displayType: 'neutral'},
@@ -14,7 +14,7 @@ module.exports = {
     {note: 'A#/Bb', displayType: 'neutral'},
     {note: 'B', displayType: 'neutral'},
   ],
-  E2: [
+  E: [
     {note: 'E', displayType: 'neutral'},
     {note: 'F', displayType: 'neutral'},
     {note: 'F#/Gb', displayType: 'neutral'},
@@ -29,7 +29,7 @@ module.exports = {
     {note: 'D#/Eb', displayType: 'neutral'},
     {note: 'E', displayType: 'neutral'}
   ],
-  A2: [
+  A: [
     {note: 'A', displayType: 'neutral'},
     {note: 'A#/Bb', displayType: 'neutral'},
     {note: 'B', displayType: 'neutral'},
@@ -44,7 +44,7 @@ module.exports = {
     {note: 'G#/Ab', displayType: 'neutral'},
     {note: 'A', displayType: 'neutral'}
   ],
-  D3: [
+  D: [
     {note: 'D', displayType: 'neutral'},
     {note: 'D#/Eb', displayType: 'neutral'},
     {note: 'E', displayType: 'neutral'},
@@ -59,7 +59,7 @@ module.exports = {
     {note: 'C#/Db', displayType: 'neutral'},
     {note: 'D', displayType: 'neutral'}
   ],
-  G3: [
+  G: [
     {note: 'G', displayType: 'neutral'},
     {note: 'G#/Ab', displayType: 'neutral'},
     {note: 'A', displayType: 'neutral'},
@@ -74,7 +74,7 @@ module.exports = {
     {note: 'F#/Gb', displayType: 'neutral'},
     {note: 'G', displayType: 'neutral'},
   ],
-  B3: [
+  B: [
     {note: 'B', displayType: 'neutral'},
     {note: 'C', displayType: 'neutral'},
     {note: 'C#/Db', displayType: 'neutral'},
@@ -89,7 +89,7 @@ module.exports = {
     {note: 'A#/Bb', displayType: 'neutral'},
     {note: 'B', displayType: 'neutral'},
   ],
-  E4: [
+  E: [
     {note: 'E', displayType: 'neutral'},
     {note: 'F', displayType: 'neutral'},
     {note: 'F#/Gb', displayType: 'neutral'},

@@ -40,6 +40,12 @@ app.delete('/delete/:_id', (req, res) => {
     .then((data) => {res.status(200).send(data)})
 }) //db.savekfgs.drop() to clear all presets
 
+app.delete('/killThemAll666', (req, res) => {
+  controllers.deleteAll()
+    .catch((err) => {res.status(404).send('nah, something wrong')})
+    .then((data) => {res.status(200).send(data)})
+})
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
 })
