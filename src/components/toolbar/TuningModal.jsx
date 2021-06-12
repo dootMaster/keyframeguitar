@@ -10,8 +10,8 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
   const [string5, setString5] = useState('A');
   const [string6, setString6] = useState('E');
   const [string7, setString7] = useState('B');
-  const [string8, setString8] = useState('G');
-  const [string9, setString9] = useState('G');
+  const [string8, setString8] = useState('F#/Gb');
+  const [string9, setString9] = useState('C#/Db');
 
   const selectNumberOfStringsMap = [4,5,6,7,8,9];
   const allStrings = [string1, string2, string3, string4, string5, string6, string7, string8, string9];

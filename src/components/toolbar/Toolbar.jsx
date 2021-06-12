@@ -40,7 +40,7 @@ class Toolbar extends React.Component {
           value={saveFileName}
           onChange={this.saveNameInputHandler}
           maxLength="64"
-          onFocus={() => event.target.value = ""}>
+          onFocus={() => this.setState({saveFileName: ''})}>
         </input>
         <button onClick={() => {savePreset(saveFileName)}}>SAVE</button>
         </ div>

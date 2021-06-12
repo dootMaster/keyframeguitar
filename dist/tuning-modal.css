@@ -1,11 +1,11 @@
 #tuning-modal {
   display: block;
-  width: 70%;
-  height: 30%;
+  width: 60%;
+  height: 20%;
   position: fixed;
   z-index: 15;
   border: 2px solid #ADA296;
-  bottom: 15vw;
+  bottom: 10vw;
   left: 12.5vw;
   background-color: #0F1A20;
   padding: 2%;
@@ -35,7 +35,7 @@
   background-color: #fda09f;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: xx-large;
   padding-left: 1rem;
   padding-right: 1rem;
   margin: .5rem;
