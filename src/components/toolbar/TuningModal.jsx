@@ -54,6 +54,7 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
               )
             })}
           </select>
+          <br />
         <div id="tuning-selector-group">
           {numberOfStrings === '9' ?
             <div>
