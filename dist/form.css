@@ -86,16 +86,16 @@ button {
   transform: rotate(-90deg);
   width: fit-content;
   height: fit-content;
-  position: absolute;
-  left: -4rem;
-  top: 44.5rem;
+  position: relative;
+  left: 8.5rem;
+  top: 6rem;
 }
 
 #target-form-title {
   transform: rotate(-90deg);
   width: fit-content;
   height: fit-content;
-  position: absolute;
-  left: 44rem;
-  top: 44.5rem;
+  position: relative;
+  left: 8rem;
+  top: 6rem;
 }
