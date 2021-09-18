@@ -3,13 +3,13 @@
   width: 80vw;
   margin-top: 1rem;
   user-select: none;
+  text-shadow: 7px 6px 10px rgba(0, 0, 0, .5);
 }
 
 .note-checkbox {
-  border-style: solid;
-  border-color: #ADA296;
-  background-color: #0F1A20;
-  border-radius: 200px;
+  border: 1px solid salmon;
+  background-color: salmon;
+  border-radius: 5px;
   user-select: none;
   margin: .5rem;
   padding: 1rem;
@@ -19,22 +19,22 @@
 }
 
 .current-form {
-  display: inline-flex;
+  display: flex;
 }
 
 .target-form {
-  display: inline-flex;
+  display: flex;
   margin-left: 2rem;
 }
 
 .checkbox-container {
   display: inline-grid;
-  color: #D8D8D8;
+  color: white;
   grid-template-columns: 25% 25% 25% 25%;
   padding: 1rem;
   border-radius: 5px;
   font-size: large;
-  background-color: #182933;
+  background-color: gainsboro;
   /* border: 1px solid rgba(0, 0, 0, 0.8); */
   padding: .5rem;
   font-size: 1rem;
@@ -44,8 +44,7 @@
 }
 
 button {
-  background-color: #FF5E5B;
-  border: 1px solid #ADA296;
+  background-color: salmon;
   color: white;
   padding: 10px 16px;
   text-align: center;
@@ -58,8 +57,7 @@ button {
 }
 
 #form-reset-button {
-  background-color: #FF5E5B;
-  border: 1px solid #ADA296;
+  background-color: salmon;
   color: white;
   padding: 10px 16px;
   text-align: center;
@@ -70,6 +68,7 @@ button {
   border-radius: 5px;
   cursor: pointer;
   max-height: 4rem;
+  border: 0px;
 }
 
 #current-true {
@@ -83,19 +82,13 @@ button {
 }
 
 #current-form-title {
-  transform: rotate(-90deg);
   width: fit-content;
   height: fit-content;
-  position: absolute;
-  left: -4rem;
-  top: 44.5rem;
+  position: relative;
 }
 
 #target-form-title {
-  transform: rotate(-90deg);
   width: fit-content;
   height: fit-content;
-  position: absolute;
-  left:44rem;
-  top: 44.5rem;
+  position: relative;
 }

@@ -54,7 +54,7 @@ class Toolbar extends React.Component {
           maxLength="64"
           onFocus={() => this.setState({saveFileName: ''})}>
         </input>
-        <button onClick={() => {savePreset(saveFileName)}}>SAVE</button>
+        <button onClick={() => {savePreset(saveFileName)}}>Save.</button>
         </ div>
         <div id="input-div">
         {/* <label id="preset-select-label" htmlFor="toolbar-user-preset-select">User Presets:</label> */}
@@ -74,10 +74,10 @@ class Toolbar extends React.Component {
         <button onClick={() => {
           this.props.deletePreset();
           this.props.clearAll();
-        }}>DELETE</button>
+        }}>Delete.</button>
         </div>
-        <button onClick={this.props.toggleTuningModal}>OPTIONS</button>
-        <button onClick={this.props.clearAll}>RESET ALL</button>
+        <button onClick={this.props.toggleTuningModal}>Tuning.</button>
+        <button onClick={this.props.clearAll}>Reset.</button>
         {/* <button onClick={this.rmvLocalStorage}>DELETE ALL</button> */}
       </div>
     )

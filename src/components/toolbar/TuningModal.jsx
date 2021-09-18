@@ -44,8 +44,6 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
   return (
     <div id="tuning-modal-wrapper">
       <div id="tuning-modal">
-        <button onClick={toggleTuningModal}>CLOSE</button>
-        <button onClick={() => alterTuningAndStringAmount(numberOfStrings, allStrings)}>Submit</button>
         <label htmlFor="string-number-select">String Amount</label>
           <select className="tuning-selector" id="string-number-select"onChange={(e) => {setNumberOfStrings(e.target.value)}} defaultValue={6}>
             {selectNumberOfStringsMap.map((num) => {
@@ -127,6 +125,10 @@ const TuningModal = ({ toggleTuningModal, alterTuningAndStringAmount }) => {
             </select>
           </div>
           : null}
+        </div>
+        <div className='tuning-modal-buttons'>
+          <button onClick={() => alterTuningAndStringAmount(numberOfStrings, allStrings)}>Submit</button>
+          <button onClick={toggleTuningModal}>CLOSE</button>
         </div>
       </div>
     </div>

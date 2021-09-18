@@ -1,47 +1,58 @@
 #tuning-modal {
-  display: block;
-  width: 60%;
-  height: 20%;
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   z-index: 15;
-  border: 2px solid #ADA296;
-  bottom: 10vw;
-  left: 12.5vw;
-  background-color: #0F1A20;
+  margin-top: 25vh;
+  height: fit-content;
+  background-color: gainsboro;
   padding: 2%;
-  border-radius: 20px;
+  border-radius: 5px;
+  box-shadow: 14px 12px 10px rgba(0, 0, 0, .5);
+  justify-content: center;
 }
 
 #tuning-modal-wrapper {
+  display: flex;
   position: fixed;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   bottom: 0vw;
   left: 0vw;
   z-index: 0;
   overflow: hidden;
+  justify-content: center;
   backdrop-filter: blur(10px);
 }
 
 #tuning-selector-group {
-  display: inline-flex;
-  position: relative;
+  display: flex;
   margin-top: 2rem;
+  justify-content: space-evenly;
+  background-color: gray;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .tuning-selector {
-  display: inline-block;
-  border: 1px solid #ADA296;
-  background-color: #fda09f;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: xx-large;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  display: flex;
+  background-color: salmon;
+  border-radius: 5px;
+  font-size: 2rem;
   margin: .5rem;
-  color: grey;
+  color: white;
 }
 
 #string-number-select {
-  font-size: xx-large;
+  display: flex;
+  position: relative;
+  font-size: 4rem;
+  width: auto;
+  text-align: center;
+}
+
+.tuning-modal-buttons {
+  display: inline-flex;
+  justify-content: center;
 }

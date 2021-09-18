@@ -1,21 +1,21 @@
 .toolbar-container {
   display: flex;
-  background-color: #182933;
+  background-color: white;
   border-radius: 5px;
   padding: 1rem;
+  justify-content:start;
 }
 
 #save-name-field, #toolbar-user-preset-select {
   display: inline-block;
-  border: 1px solid #ADA296;
-  background-color: #fda09f;
+  background-color: salmon;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
   margin: .5rem;
-  color: grey;
+  color: white;
 }
 
 #toolbar-user-preset-select {
@@ -32,7 +32,7 @@
 
 #input-div {
   display: flex;
-  background-color: #4f7891;
+  background-color: white;
   border-radius: 5px;
   padding: .5rem;
   margin-left: 1rem;

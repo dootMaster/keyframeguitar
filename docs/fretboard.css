@@ -1,41 +1,41 @@
 .fretboard {
   display: grid;
   grid-template-rows: auto auto auto;
-  background-color: #182933;
+  background-color: gainsboro;
   padding: 16px;
-  /* border-radius: 10px; */
-  color: #88A2AA;
+  color: white;
   width: 90vw;
+  height: 40vh;
   margin: 1rem auto;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .string {
   display: inline-grid;
   grid-template-columns:7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7%;
-  background-color: #182933;
+  background-color: gainsboro;
   /* border: 1px solid rgba(0, 0, 0, 0.8); */
   padding: 2px;
   font-size: 30px;
   text-align: center;
+  align-items: center;
+  text-shadow: 7px 6px 10px rgba(0, 0, 0, .5);
 }
 
 .markers {
   display: inline-grid;
   grid-template-columns:7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7% 7.7%;
-  background-color: #ADA296;
-  color: grey;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  border-radius: 20px;
-  padding: 5px;
-  font-size: 15px;
+  background-color: gainsboro;
+  color: gray;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: .5rem;
+  align-items: center;
 }
 
 .nut {
-  border-style: solid;
-  border-color: white;
+  border: solid 1px gray;
+  border-radius: 5px;
   background-color: #D8D8D8;
   color: white;
   padding: 1px;
@@ -45,8 +45,7 @@
 }
 
 .fret {
-  border: solid grey;
-  border-radius: 200px;
+  border-radius: 5px;
   padding: 1px;
   margin-right: 10px;
   user-select: none;
@@ -54,40 +53,38 @@
 }
 
 .fret-mark {
-  border: solid white;
-  border-radius: 200px;
-  padding: 1px;
+  border: 1px solid gray;
+  border-radius: 5px;
   margin-right: 10px;
   user-select: none;
   cursor: pointer;
 }
 
 .fret-guide {
-  border-style: solid;
   border-color: white;
-  border-radius: 200px;
-  padding: 1px;
+  border-radius: 5px;
   margin-right: 10px;
   user-select: none;
   cursor: default;
+  align-content: center;
 }
 
 #current {
   background-color: #00CECB;
-  color: #F42C04;
+  color: white;
 }
 
 #target {
   background-color: #F42C04;
-  color: #00CECB;
+  color: white;
 }
 
 #neutral {
-  background-color: #0F1A20;
+  background-color: salmon;
 }
 
 #common {
   background-color: #FFED66;
   border-color: #FF5E5B;
-  color: black;
+  color: gray;
 }

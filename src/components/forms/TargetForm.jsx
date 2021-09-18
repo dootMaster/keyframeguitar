@@ -50,7 +50,7 @@ class TargetForm extends React.Component {
     const { C, 'C#/Db': Db, D, 'D#/Eb': Eb, E, F, 'F#/Gb': Gb, G, 'G#/Ab': Ab, A, 'A#/Bb': Bb, B } = this.state;
     return (
       <div className="target-form">
-        <h2 id="target-form-title">Target Configuration</h2>
+        <h2 id="target-form-title">Target</h2>
         <form className="checkbox-container">
           <div
             className="note-checkbox"
