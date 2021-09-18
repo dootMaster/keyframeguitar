@@ -32,7 +32,7 @@ class App extends React.Component {
       saveIds: [],
       currentPreset: '',
       clearAll: false,
-      displayTuningModal: true,
+      displayTuningModal: false,
     }
   }
 
